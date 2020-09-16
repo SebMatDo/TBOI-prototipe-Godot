@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/blobby wiggle 3.wav-728f80e0a5825f5e0537c9c29ac55636.sample"
+
+[deps]
+
+source_file="res://Resources/sfx/blobby wiggle 3.wav"
+dest_files=[ "res://.import/blobby wiggle 3.wav-728f80e0a5825f5e0537c9c29ac55636.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

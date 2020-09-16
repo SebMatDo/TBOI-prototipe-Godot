@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/the cellar alt.ogg-9da4e4c424278fd1c30191e959ea4481.oggstr"
+
+[deps]
+
+source_file="res://Resources/sfx/background/the cellar alt.ogg"
+dest_files=[ "res://.import/the cellar alt.ogg-9da4e4c424278fd1c30191e959ea4481.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

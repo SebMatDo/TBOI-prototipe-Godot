@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/boss explosions 0.wav-41941194ce80a1d7453c9fafdf40ad91.sample"
+
+[deps]
+
+source_file="res://Resources/sfx/boss explosions 0.wav"
+dest_files=[ "res://.import/boss explosions 0.wav-41941194ce80a1d7453c9fafdf40ad91.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

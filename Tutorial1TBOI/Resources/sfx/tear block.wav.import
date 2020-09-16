@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tear block.wav-a067f8a31ffdc1fd087dfa1cb06bc84f.sample"
+
+[deps]
+
+source_file="res://Resources/sfx/tear block.wav"
+dest_files=[ "res://.import/tear block.wav-a067f8a31ffdc1fd087dfa1cb06bc84f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

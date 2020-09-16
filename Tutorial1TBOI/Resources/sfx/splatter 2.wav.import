@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/splatter 2.wav-4c4134b3f84721694e45bf813084906d.sample"
+
+[deps]
+
+source_file="res://Resources/sfx/splatter 2.wav"
+dest_files=[ "res://.import/splatter 2.wav-4c4134b3f84721694e45bf813084906d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

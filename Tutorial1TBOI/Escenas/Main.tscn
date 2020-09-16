@@ -1,0 +1,205 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Escenas/Obj_Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Roomer.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/CollisionShape2DRoomer.gd" type="Script" id=4]
+[ext_resource path="res://Resources/SpritesPersonaje/Circuloblanco.png" type="Texture" id=5]
+[ext_resource path="res://Escenas/Room.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=7]
+[ext_resource path="res://Resources/tileset/01_basement.png" type="Texture" id=8]
+[ext_resource path="res://Escenas/items/Item_Meat.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Escenas/items/Item_SadOnion.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scripts/Control.gd" type="Script" id=11]
+[ext_resource path="res://Escenas/Heart.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scripts/bitmapFont_from_image.gd" type="Script" id=13]
+[ext_resource path="res://Resources/font/enf.png" type="Texture" id=14]
+
+[sub_resource type="TileSet" id=1]
+0/name = "01_basement.png 0"
+0/texture = ExtResource( 8 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 234, 156 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
+1/name = "01_basement.png 1"
+1/texture = ExtResource( 8 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 234, 0, 234, 156 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [  ]
+1/z_index = 0
+2/name = "01_basement.png 2"
+2/texture = ExtResource( 8 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 156, 234, 156 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shapes = [  ]
+2/z_index = 0
+3/name = "01_basement.png 3"
+3/texture = ExtResource( 8 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 234, 156, 234, 156 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shapes = [  ]
+3/z_index = 0
+4/name = "01_basement.png 4"
+4/texture = ExtResource( 8 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 52, 363, 184, 105 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shapes = [  ]
+4/z_index = 0
+5/name = "01_basement.png 5"
+5/texture = ExtResource( 8 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 286, 363, 184, 105 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shapes = [  ]
+5/z_index = 0
+6/name = "01_basement.png 6"
+6/texture = ExtResource( 8 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 188, 0, 46, 157 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shapes = [  ]
+6/z_index = 0
+
+[node name="Main" type="Node2D"]
+position = Vector2( 360.896, 360.896 )
+script = ExtResource( 1 )
+
+[node name="Obj_Player" parent="." groups=[
+"Player",
+] instance=ExtResource( 2 )]
+z_index = 1
+delay = 1.0
+
+[node name="Roomer" type="Area2D" parent="."]
+editor/display_folded = true
+self_modulate = Color( 0, 0, 0, 1 )
+monitoring = false
+collision_layer = 524288
+collision_mask = 524288
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Roomer"]
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Roomer"]
+self_modulate = Color( 0.054902, 1, 0, 1 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 5 )
+
+[node name="Room" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
+
+[node name="Sprite2" type="Sprite" parent="Room"]
+self_modulate = Color( 1, 0, 0, 1 )
+texture = ExtResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 10, 10 )
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+script = ExtResource( 7 )
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -1000
+z_as_relative = false
+tile_set = SubResource( 1 )
+cell_size = Vector2( 1, 1 )
+format = 1
+
+[node name="Item_TheMark" parent="." instance=ExtResource( 9 )]
+position = Vector2( -124.896, 80.104 )
+
+[node name="Item_TheMark2" parent="." instance=ExtResource( 9 )]
+position = Vector2( -46.896, 89.104 )
+
+[node name="Item_TheMark4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 104.104, 76.104 )
+
+[node name="Item_TheMark3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 30.104, 84.104 )
+
+[node name="Item_TheMark5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 65.104, 82.104 )
+
+[node name="Item_TheMark6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 49.104, 58.104 )
+
+[node name="Item_TheMark7" parent="." instance=ExtResource( 9 )]
+position = Vector2( 111.104, 40.104 )
+
+[node name="Item_SadOnion" parent="." instance=ExtResource( 10 )]
+position = Vector2( -93.896, 37.104 )
+
+[node name="Item_SadOnion2" parent="." instance=ExtResource( 10 )]
+position = Vector2( -42.896, 37.104 )
+
+[node name="Item_SadOnion3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 9.104, 41.104 )
+
+[node name="Item_SadOnion4" parent="." instance=ExtResource( 10 )]
+position = Vector2( -80.896, 91.104 )
+
+[node name="Item_SadOnion6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 95.104, -4.896 )
+
+[node name="Item_SadOnion5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 0.104004, 86.104 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 11 )
+
+[node name="Heart" parent="." instance=ExtResource( 12 )]
+position = Vector2( -132.896, 26.104 )
+
+[node name="Heart7" parent="." instance=ExtResource( 12 )]
+position = Vector2( -153.896, 60.104 )
+
+[node name="Heart3" parent="." instance=ExtResource( 12 )]
+position = Vector2( -89.896, 5.104 )
+
+[node name="Heart4" parent="." instance=ExtResource( 12 )]
+position = Vector2( -112.896, 59.104 )
+
+[node name="Heart5" parent="." instance=ExtResource( 12 )]
+position = Vector2( -42.896, 56.104 )
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource( 13 )
+font_texture = ExtResource( 14 )
+

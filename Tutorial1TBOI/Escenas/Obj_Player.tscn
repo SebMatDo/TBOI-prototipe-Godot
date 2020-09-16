@@ -1,0 +1,387 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scripts/Obj_Player.gd" type="Script" id=1]
+[ext_resource path="res://Resources/SpritesPersonaje/IsaacWalk.png" type="Texture" id=2]
+[ext_resource path="res://Resources/SpritesPersonaje/Circuloblanco.png" type="Texture" id=3]
+[ext_resource path="res://Resources/SpritesPersonaje/IsaacHead.png" type="Texture" id=4]
+[ext_resource path="res://Resources/SpritesPersonaje/character_001_isaac.png" type="Texture" id=5]
+[ext_resource path="res://Resources/SpritesPersonaje/ghost.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "IsaacIdle"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "IsaacWalkX"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 10, 11, 12, 13, 14, 15, 16, 17, 18 ]
+}
+
+[sub_resource type="Animation" id=3]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 4.0
+height = 6.0
+
+[sub_resource type="Animation" id=5]
+length = 0.32
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.01, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.32
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.01, 0.29 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 2 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.32
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.01, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 4 ]
+}
+
+[sub_resource type="CanvasItemMaterial" id=8]
+
+[sub_resource type="Animation" id=9]
+length = 0.35
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 0.796078, 0.235294, 0.235294, 1 ), Color( 1, 1, 1, 1 ), Color( 0.803922, 0.682353, 0.368627, 1 ), Color( 0.796078, 0.235294, 0.235294, 1 ), Color( 1, 1, 1, 1 ), Color( 0.803922, 0.682353, 0.368627, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.25, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.8, 1.2 ), Vector2( 1.2, 0.8 ), Vector2( 0.94, 1.06 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:material")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.05 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 8 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:material:blend_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.25, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0, 1, 0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:region_rect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Rect2( 148, 215, 28, 32 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, -7 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "death"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 18, 216, 28, 33 ), Rect2( 18, 152, 28, 33 ), Rect2( 148, 215, 28, 32 ), Rect2( 205, 162, 36, 27 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 0.9 ), Vector2( 1.2, 0.8 ), Vector2( 0.8, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 30.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, -7 ), Vector2( 0, -3 ), Vector2( -3, -3 ), Vector2( 0, -3 ), Vector2( -3, -3 ), Vector2( -3, -3 ), Vector2( 0, -3 ), Vector2( -3, -3 ), Vector2( 0, -3 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("spr_ghost:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.6, 1.8, 2, 3.2, 3.4, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.301961 ), Color( 1, 1, 1, 0.4 ), Color( 1, 1, 1, 0.596078 ), Color( 1, 1, 1, 0.509804 ), Color( 1, 1, 1, 0.470588 ), Color( 1, 1, 1, 0.431373 ), Color( 1, 1, 1, 0.313726 ), Color( 1, 1, 1, 0.235294 ), Color( 1, 1, 1, 0.156863 ), Color( 1, 1, 1, 0.137255 ), Color( 1, 1, 1, 0.117647 ), Color( 1, 1, 1, 0.0588235 ), Color( 1, 1, 1, 0.0196078 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("spr_ghost:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.3, 3.5, 3.7, 3.9, 4.1, 4.3, 4.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -22 ), Vector2( 0, -32 ), Vector2( 5, -56 ), Vector2( 0, -75 ), Vector2( -5, -85 ), Vector2( 0, -94 ), Vector2( 5, -105 ), Vector2( 0, -117 ), Vector2( -5, -137 ), Vector2( 0, -145 ), Vector2( 5, -150 ), Vector2( 0, -160 ), Vector2( -5, -170 ), Vector2( 0, -180 ), Vector2( 5, -185 ), Vector2( 0, -200 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("spr_ghost:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 1.6, 1.8, 2, 2.4, 2.6, 2.8, 3.2, 3.3, 3.5, 3.9, 4.1, 4.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.9, 1.1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.9, 1.1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.9, 1.1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.9, 1.1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("spr_ghost:region_rect")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.3, 3.5, 3.7, 3.9, 4.1, 4.3, 4.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 66, 0, 28, 34 ), Rect2( 130, 0, 28, 34 ), Rect2( 2, 0, 28, 32 ), Rect2( 34, 0, 28, 30 ), Rect2( 66, 0, 28, 34 ), Rect2( 130, 0, 28, 34 ), Rect2( 2, 0, 28, 32 ), Rect2( 34, 0, 28, 30 ), Rect2( 66, 0, 28, 34 ), Rect2( 130, 0, 28, 34 ), Rect2( 2, 0, 28, 32 ), Rect2( 34, 0, 28, 30 ), Rect2( 66, 0, 28, 34 ), Rect2( 130, 0, 28, 34 ), Rect2( 2, 0, 28, 32 ) ]
+}
+
+[node name="Obj_Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+delay = 0.5
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 1 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 10
+frame = 4
+region_rect = Rect2( 0, 290, 48, 38 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/IsaacIdle = SubResource( 1 )
+anims/IsaacWalkX = SubResource( 2 )
+anims/IsaacWalkY = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 6 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="Spr_Sombra" type="Sprite" parent="."]
+self_modulate = Color( 0.231373, 0.223529, 0.223529, 1 )
+position = Vector2( -1, 6 )
+scale = Vector2( 0.730465, 0.342788 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="RayCast2D" type="RayCast2D" parent="." groups=[
+"PlayerRaycast",
+]]
+position = Vector2( -341.5, 0 )
+enabled = true
+cast_to = Vector2( 683, 0 )
+collision_mask = 2
+collide_with_areas = true
+
+[node name="RayCast2D2" type="RayCast2D" parent="." groups=[
+"PlayerRaycast",
+]]
+position = Vector2( 0, -192 )
+rotation = 1.57079
+enabled = true
+cast_to = Vector2( 384, 0 )
+collision_mask = 2
+collide_with_areas = true
+
+[node name="Spr_Head" type="Sprite" parent="."]
+position = Vector2( -1, -14 )
+texture = ExtResource( 4 )
+hframes = 8
+frame = 1
+
+[node name="AnimationHead" type="AnimationPlayer" parent="Spr_Head"]
+anims/IsaacHeadDown = SubResource( 5 )
+anims/IsaacHeadL = SubResource( 6 )
+anims/IsaacHeadUp = SubResource( 7 )
+
+[node name="spr_hit" type="Sprite" parent="."]
+visible = false
+material = SubResource( 8 )
+position = Vector2( 0, -3 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 205, 162, 36, 27 )
+
+[node name="AnimationHit" type="AnimationPlayer" parent="spr_hit"]
+anims/Hit = SubResource( 9 )
+anims/death = SubResource( 10 )
+
+[node name="spr_ghost" type="Sprite" parent="spr_hit"]
+modulate = Color( 1, 1, 1, 0.0588235 )
+position = Vector2( 2.50001, -182.5 )
+z_index = -1
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 66, 0, 28, 34 )
+
+[node name="tmr_shoot" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="tmr_hit" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="tmr_shoot" to="." method="_on_tmr_shoot_timeout"]
+[connection signal="timeout" from="tmr_hit" to="." method="_on_tmr_hit_timeout"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/isaac dies new.wav-61c0e64cae26e4e26214ff679a95dffb.sample"
+
+[deps]
+
+source_file="res://Resources/sfx/isaac dies new.wav"
+dest_files=[ "res://.import/isaac dies new.wav-61c0e64cae26e4e26214ff679a95dffb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

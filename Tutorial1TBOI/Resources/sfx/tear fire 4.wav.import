@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tear fire 4.wav-8903474c1a396c5e02733b8cdfb30fe1.sample"
+
+[deps]
+
+source_file="res://Resources/sfx/tear fire 4.wav"
+dest_files=[ "res://.import/tear fire 4.wav-8903474c1a396c5e02733b8cdfb30fe1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
