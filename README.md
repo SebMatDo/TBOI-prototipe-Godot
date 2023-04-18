@@ -3,4 +3,4 @@ This is an old project created in Godot for learning purpouses, recreating the b
 All assets and music are owned by Nicalis, original autors of TBOI
 
 ### Video of the actual prototipe
-[![Video of the prototipe in game](http://img.youtube.com/vi/lOTLos90Kak/0.jpg)](http://www.youtube.com/watch?v=lOTLos90Kak "TBOI prototipe in Godot")
+[![Video of the prototipe in game](http://img.youtube.com/vi/tv2k_R8j1ww/0.jpg)](http://www.youtube.com/watch?v=tv2k_R8j1ww "TBOI prototipe in Godot")
